@@ -15,6 +15,10 @@ app.use(cors());
 app.use('/auth',AuthRouter);
 app.use('/',HomeRouter);
 
+app.get('/ping', (req,res)=>{
+    res.send('pong');
+})
+
 mongoose.connect(MONGO_URI).then(()=>{
     app.listen(PORT,()=>{
     console.log(`server started on PORT: ${PORT}`);
