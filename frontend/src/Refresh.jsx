@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { replace, useLocation, useNavigate } from 'react-router-dom'
 
-function RefreshHandler({setIsAuthenticated}) {
-    const location = useLocation();
+function Refresh({setIsAuthenticated}) {
+  const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -18,4 +18,4 @@ function RefreshHandler({setIsAuthenticated}) {
   )
 }
 
-export default RefreshHandler
+export default Refresh
