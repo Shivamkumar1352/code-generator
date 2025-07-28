@@ -31,3 +31,14 @@
   border: 1px solid #333;
   box-shadow: inset 0 0 8px #00000088;
 }
+
+/* ===== Responsive Styles for Chat History ===== */
+@media (max-width: 768px) {
+  .history-container {
+    padding: 1rem;
+  }
+
+  .chat-item pre {
+    font-size: 14px;
+  }
+}

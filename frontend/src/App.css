@@ -4,3 +4,10 @@ html, body, #root {
   padding: 0;
   height: 100%;
 }
+
+/* ===== Global Mobile Styles ===== */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 15px;
+  }
+}
