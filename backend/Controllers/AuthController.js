@@ -1,4 +1,4 @@
-const UserModel = require("../Models/User");
+const UserModel = require.cache[require.resolve('../models/User')]?.exports || require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
@@ -45,7 +45,8 @@ const login = async (req, res) => {
             success: true,
             jwtToken,
             email,
-            name : user.name
+            name : user.name,
+            user
         });
     } catch (err) {
         res.status(500).json({ message: "Internal server error", success: false });

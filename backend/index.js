@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 const AuthRouter = require('./Routes/AuthRouter');
 const HomeRouter = require('./Routes/HomeRouter');
+const ChatRouter = require('./Routes/ChatRouter');
 require('dotenv').config();
 
 const PORT = process.env.PORT
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/auth',AuthRouter);
 app.use('/',HomeRouter);
+app.use('/chat', ChatRouter);
 
 app.get('/ping', (req,res)=>{
     res.send('pong');

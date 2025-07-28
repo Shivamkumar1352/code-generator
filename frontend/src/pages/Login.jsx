@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "../utils";
 import axios from "axios";
-
+import './Login.css';
 function Login() {
   const API_URL = import.meta.env.VITE_API_URL;
     const [loginInfo, setLoginInfo] = useState({
@@ -32,12 +32,14 @@ function Login() {
         const url = `${API_URL}/auth/login`;
         const response = await axios.post(url, loginInfo);
         const result = response.data;
-
-        const { message, success, jwtToken, name, error } = result;
+        console.log(result);
+        const { message, success, jwtToken, name, user, error } = result;
         if (success) {
             handleSuccess(message);
             localStorage.setItem('token', jwtToken);
             localStorage.setItem('loggedInUser', name);
+            localStorage.setItem('user', user._id); 
+            
             setTimeout(() => {
                 navigate('/home');
             }, 1000);

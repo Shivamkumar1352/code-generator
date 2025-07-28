@@ -1,4 +1,4 @@
-*,
+/* *,
 ::before,
 ::after{
   box-sizing: border-box;
@@ -69,4 +69,4 @@ button{
   padding: 10px;
   cursor: pointer;
   margin: 10px 0;
-}
+} */
