@@ -1,4 +1,5 @@
-const UserModel = require.cache[require.resolve('../Models/User')]?.exports || require('../models/User');
+// const UserModel = require.cache[require.resolve('../Models/User')]?.exports || require('../models/User');
+const UserModel = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
